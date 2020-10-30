@@ -124,6 +124,7 @@ Enable the rules that you would like to use.
 * [react/no-is-mounted](docs/rules/no-is-mounted.md): Prevent usage of isMounted
 * [react/no-multi-comp](docs/rules/no-multi-comp.md): Prevent multiple component definition per file
 * [react/no-redundant-should-component-update](docs/rules/no-redundant-should-component-update.md): Flag shouldComponentUpdate when extending PureComponent
+* [react/no-reference-type-as-default-prop](docs/rules/no-reference-type-as-default-prop.md): Prevent usage of referential-type variables as default param in functional component
 * [react/no-render-return-value](docs/rules/no-render-return-value.md): Prevent usage of the return value of React.render
 * [react/no-set-state](docs/rules/no-set-state.md): Prevent usage of setState
 * [react/no-string-refs](docs/rules/no-string-refs.md): Prevent string definitions for references and prevent referencing this.refs

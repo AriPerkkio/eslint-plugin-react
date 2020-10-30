@@ -70,6 +70,7 @@ const allRules = {
   'no-set-state': require('./lib/rules/no-set-state'),
   'no-string-refs': require('./lib/rules/no-string-refs'),
   'no-redundant-should-component-update': require('./lib/rules/no-redundant-should-component-update'),
+  'no-reference-type-as-default-prop': require('./lib/rules/no-reference-type-as-default-prop'),
   'no-render-return-value': require('./lib/rules/no-render-return-value'),
   'no-this-in-sfc': require('./lib/rules/no-this-in-sfc'),
   'no-typos': require('./lib/rules/no-typos'),
