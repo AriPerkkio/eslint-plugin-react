@@ -23,3 +23,6 @@ sftp-config.json
 # Only apps should have lockfiles
 yarn.lock
 package-lock.json
+
+.cache-eslint-remote-tester
+eslint-remote-tester-results
