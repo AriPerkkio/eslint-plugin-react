@@ -28,6 +28,12 @@ const ERROR_MESSAGE_COMPONENT_AS_PROPS = `${ERROR_MESSAGE} If you want to allow 
 // Tests
 // ------------------------------------------------------------------------------
 
+const force = !true;
+
+const filterRules = (item, index, array) => (
+  (!force && array.every((r) => !/only/.test(r.code))) || /only/.test(item.code)
+);
+
 const ruleTester = new RuleTester({parserOptions});
 ruleTester.run('no-unstable-nested-components', rule, {
   valid: [
@@ -209,6 +215,15 @@ ruleTester.run('no-unstable-nested-components', rule, {
             <RenderPropComponent>
               {() => <div />}
             </RenderPropComponent>
+          );
+      }
+      `
+    },
+    {
+      code: `
+      function ParentComponent() {
+          return (
+            <RenderPropComponent children={() => <div />} />
           );
       }
       `
@@ -459,8 +474,54 @@ ruleTester.run('no-unstable-nested-components', rule, {
         return <Table rows={rows} />;
       }
       `
+    },
+    {
+      code: `
+      function ParentComponent() {
+        return <SomeComponent renderers={{ notComponent: () => null }} />;
+      }
+      `
+    },
+    {
+      code: `
+      const ParentComponent = createReactClass({
+        displayName: "ParentComponent",
+        statics: {
+          getSnapshotBeforeUpdate: function () {
+            return null;
+          },
+        },
+        render() {
+          return <div />;
+        },
+      });
+      `
     }
-  ],
+    /*
+    {
+      code: `
+      const testCases = {
+        basic: {
+          render() {
+            const Component = () => <div />;
+            return <div />;
+          }
+        }
+      }
+      `
+    },
+    */
+    /* TODO: tricky to detect these
+    {
+      code: `
+      function ParentComponent() {
+        const _renderHeader = () => <div />;
+        return <div>{_renderHeader()}</div>;
+      }
+      `
+    },
+    */
+  ].filter(filterRules),
 
   invalid: [
     {
@@ -970,6 +1031,49 @@ ruleTester.run('no-unstable-nested-components', rule, {
       }
       `,
       errors: [{message: ERROR_MESSAGE}]
+    },
+    {
+      code: `
+      class ParentComponent extends React.Component {
+        render() {
+          const List = (props) => {
+            const items = props.items
+              .map((item) => (
+                <li key={item.key}>
+                  <span>{item.name}</span>
+                </li>
+              ));
+
+            return <ul>{items}</ul>;
+          };
+
+          return <List {...this.props} />;
+        }
+      }
+      `,
+      // Only a single error should be shown. This can get easily marked twice.
+      errors: [{message: ERROR_MESSAGE}]
+    }
+  ].filter(filterRules)
+});
+
+/*
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Mocha Tests",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+        // "--watch",
+        "${workspaceFolder}/tests/lib/rules/no-unstable-nested-components.js"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
-});
+}
+*/
