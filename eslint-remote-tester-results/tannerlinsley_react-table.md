@@ -122,45 +122,6 @@
 
 ## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "Table" or memoize it.`
-- Path: `tannerlinsley/react-table/examples/grouping-column/src/App.js`
-- [Link](https://github.com/tannerlinsley/react-table/blob/HEAD/examples/grouping-column/src/App.js#L94-L116)
-```js
-                  </span>
-                )
-              })
-            },
-            Cell: ({ row }) => {
-              if (row.canExpand) {
-                const groupedCell = row.allCells.find(d => d.isGrouped)
-
-                return (
-                  <span
-                    {...row.getToggleRowExpandedProps({
-                      style: {
-                        // We can even use the row.depth property
-                        // and paddingLeft to indicate the depth
-                        // of the row
-                        paddingLeft: `${row.depth * 2}rem`,
-                      },
-                    })}
-                  >
-                    {row.isExpanded ? '👇' : '👉'} {groupedCell.render('Cell')}{' '}
-                    ({row.subRows.length})
-                  </span>
-                )
-              }
-
-              return null
-            },
-          },
-          ...columns,
-        ]
-      })
-    }
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Table" or memoize it.`
 - Path: `tannerlinsley/react-table/examples/kitchen-sink/src/App.js`
 - [Link](https://github.com/tannerlinsley/react-table/blob/HEAD/examples/kitchen-sink/src/App.js#L329-L333)
 ```js
@@ -420,23 +381,6 @@
 ## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "App" or memoize it.`
 - Path: `tannerlinsley/react-table/examples/sub-components/src/App.js`
-- [Link](https://github.com/tannerlinsley/react-table/blob/HEAD/examples/sub-components/src/App.js#L119-L119)
-```js
-  const columns = React.useMemo(
-    () => [
-      {
-        // Make an expander cell
-        Header: () => null, // No header
-        id: 'expander', // It needs an ID
-        Cell: ({ row }) => (
-          // Use Cell to render an expander for each row.
-          // We can use the getToggleRowExpandedProps prop-getter
-          // to build the expander.
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "App" or memoize it.`
-- Path: `tannerlinsley/react-table/examples/sub-components/src/App.js`
 - [Link](https://github.com/tannerlinsley/react-table/blob/HEAD/examples/sub-components/src/App.js#L121-L128)
 ```js
       {
@@ -456,23 +400,6 @@
         Header: 'Name',
         columns: [
           {
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "App" or memoize it.`
-- Path: `tannerlinsley/react-table/examples/sub-components-lazy/src/App.js`
-- [Link](https://github.com/tannerlinsley/react-table/blob/HEAD/examples/sub-components-lazy/src/App.js#L175-L175)
-```js
-  const columns = React.useMemo(
-    () => [
-      {
-        // Make an expander cell
-        Header: () => null, // No header
-        id: 'expander', // It needs an ID
-        Cell: ({ row }) => (
-          // Use Cell to render an expander for each row.
-          // We can use the getToggleRowExpandedProps prop-getter
-          // to build the expander.
 ```
 
 ## Rule: react/no-unstable-nested-components
@@ -502,23 +429,6 @@
 ## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "App" or memoize it.`
 - Path: `tannerlinsley/react-table/examples/sub-components-lazy/src/App.js`
-- [Link](https://github.com/tannerlinsley/react-table/blob/HEAD/examples/sub-components-lazy/src/App.js#L186-L186)
-```js
-            {row.isExpanded ? '👇' : '👉'}
-          </span>
-        ),
-        // We can override the cell renderer with a SubCell to be used with an expanded row
-        SubCell: () => null // No expander on an expanded row
-      },
-      {
-        Header: 'Name',
-        columns: [
-          {
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "App" or memoize it.`
-- Path: `tannerlinsley/react-table/examples/sub-components-lazy/src/App.js`
 - [Link](https://github.com/tannerlinsley/react-table/blob/HEAD/examples/sub-components-lazy/src/App.js#L196-L198)
 ```js
             Header: 'First Name',
@@ -533,23 +443,6 @@
             Header: 'Last Name',
             accessor: (d) => d.lastName
           }
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "App" or memoize it.`
-- Path: `tannerlinsley/react-table/src/plugin-hooks/tests/useExpanded.test.js`
-- [Link](https://github.com/tannerlinsley/react-table/blob/HEAD/src/plugin-hooks/tests/useExpanded.test.js#L70-L70)
-```js
-function App() {
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: () => null,
-        id: 'expander',
-        Cell: ({ row }) => (
-          <span
-            style={{
-              cursor: 'pointer',
 ```
 
 ## Rule: react/no-unstable-nested-components

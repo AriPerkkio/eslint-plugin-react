@@ -309,27 +309,6 @@
 ```
 
 ## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Index" or memoize it.`
-- Path: `coinbase/rest-hooks/website/pages/en/index.js`
-- [Link](https://github.com/coinbase/rest-hooks/blob/HEAD/website/pages/en/index.js#L199-L203)
-```js
-      }
-
-      const showcase = siteConfig.users
-        .filter(user => user.pinned)
-        .map(user => (
-          <a href={user.infoLink} key={user.infoLink}>
-            <img src={user.image} alt={user.caption} title={user.caption} />
-          </a>
-        ));
-
-      const pageUrl = page => baseUrl + (language ? `${language}/` : '') + page;
-
-      return (
-        <div className="productShowcaseSection paddingBottom">
-```
-
-## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "Versions" or memoize it.`
 - Path: `coinbase/rest-hooks/website/pages/en/versions.js`
 - [Link](https://github.com/coinbase/rest-hooks/blob/HEAD/website/pages/en/versions.js#L26-L29)

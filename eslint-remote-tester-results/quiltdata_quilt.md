@@ -24,23 +24,6 @@ function Vcf({ meta, header, data, variants, note, warnings }) {
 ```
 
 ## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Sparkline" or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/components/Sparkline/Sparkline.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/components/Sparkline/Sparkline.js#L83-L83)
-```js
-  const fillShape = React.useMemo(
-    () =>
-      SVG.Paint.case(
-        {
-          None: () => null,
-          _: () => [
-            ...contourShape,
-            { ...contourShape[contourShape.length - 1], y: height },
-            { ...contourShape[0], y: height },
-            contourShape[0],
-```
-
-## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component or memoize it. If you want to allow component creation in props, set allowAsProps option to true.`
 - Path: `quiltdata/quilt/catalog/app/containers/Admin/Users.js`
 - [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Admin/Users.js#L643-L645)
@@ -203,23 +186,6 @@ function Vcf({ meta, header, data, variants, note, warnings }) {
 ## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "Dir" or memoize it.`
 - Path: `quiltdata/quilt/catalog/app/containers/Bucket/Dir.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/Dir.js#L153-L153)
-```js
-      <Code gutterBottom>{code}</Code>
-
-      {data.case({
-        Err: displayError(),
-        Init: () => null,
-        _: (x) => {
-          const res = AsyncResult.case(
-            {
-              Ok: R.identity,
-              Pending: AsyncResult.case({
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Dir" or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/containers/Bucket/Dir.js`
 - [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/Dir.js#L154-L188)
 ```js
 
@@ -266,40 +232,6 @@ function Vcf({ meta, header, data, variants, note, warnings }) {
   )
 }
 
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/containers/Bucket/Dir.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/Dir.js#L160-L160)
-```js
-            {
-              Ok: R.identity,
-              Pending: AsyncResult.case({
-                Ok: R.identity,
-                _: () => null,
-              }),
-              _: () => null,
-            },
-            x,
-          )
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/containers/Bucket/Dir.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/Dir.js#L162-L162)
-```js
-              Pending: AsyncResult.case({
-                Ok: R.identity,
-                _: () => null,
-              }),
-              _: () => null,
-            },
-            x,
-          )
-
-          if (!res) return <M.CircularProgress />
 ```
 
 ## Rule: react/no-unstable-nested-components
@@ -743,23 +675,6 @@ function Vcf({ meta, header, data, variants, note, warnings }) {
       )}
     </M.Box>
   )
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Downloads" or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/containers/Bucket/Overview.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/Overview.js#L542-L542)
-```js
-  }
-
-  const mkRawData = AsyncResult.case({
-    Ok: (data) => `data:application/json,${JSON.stringify(data)}`,
-    _: () => null,
-  })
-
-  if (!analyticsBucket) {
-    return (
-      <ChartSkel height={CHART_H} width={width}>
 ```
 
 ## Rule: react/no-unstable-nested-components
@@ -1549,23 +1464,6 @@ const useRevisionStyles = M.makeStyles((t) => ({
 ## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "RevisionInfo" or memoize it.`
 - Path: `quiltdata/quilt/catalog/app/containers/Bucket/PackageTree.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/PackageTree.js#L124-L124)
-```js
-          >
-            <M.Icon>link</M.Icon>
-          </M.IconButton>
-        ),
-        _: () => null,
-      })}
-
-      <M.Popover
-        open={opened && !!anchor}
-        anchorEl={anchor}
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "RevisionInfo" or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/containers/Bucket/PackageTree.js`
 - [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/PackageTree.js#L169-L176)
 ```js
                     </M.IconButton>
@@ -1658,23 +1556,6 @@ const useRevisionStyles = M.makeStyles((t) => ({
       {!!resolvedFrom && (
         <M.Box mb={2}>
           <Lab.Alert
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "PackageTree" or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/containers/Bucket/PackageTree.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/PackageTree.js#L646-L646)
-```js
-        revisionData.case({
-          Ok: ({ hash, modified }) => (
-            <ExposeLinkedData {...{ bucketCfg, bucket, name, hash, modified }} />
-          ),
-          _: () => null,
-        })}
-      {!!resolvedFrom && (
-        <M.Box mb={2}>
-          <Lab.Alert
-            severity="info"
 ```
 
 ## Rule: react/no-unstable-nested-components
@@ -1822,23 +1703,6 @@ const useRevisionStyles = M.makeStyles((t) => ({
 ## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "Thumbnails" or memoize it.`
 - Path: `quiltdata/quilt/catalog/app/containers/Bucket/Summary.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/Summary.js#L131-L131)
-```js
-        {pagination.paginated.map((i) => (
-          <Link key={i.logicalKey || i.key} to={mkUrl(i)} className={classes.link}>
-            <HandleResolver resolve={resolveLogicalKey} handle={i}>
-              {AsyncResult.case({
-                _: () => null,
-                Ok: (resolved) => (
-                  <Thumbnail
-                    handle={resolved}
-                    className={classes.img}
-                    alt={basename(i.logicalKey || i.key)}
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Thumbnails" or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/containers/Bucket/Summary.js`
 - [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/Summary.js#L132-L139)
 ```js
           <Link key={i.logicalKey || i.key} to={mkUrl(i)} className={classes.link}>
@@ -1863,29 +1727,6 @@ const useRevisionStyles = M.makeStyles((t) => ({
 ## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "BucketSummary" or memoize it.`
 - Path: `quiltdata/quilt/catalog/app/containers/Bucket/Summary.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/Summary.js#L207-L213)
-```js
-              fetch={requests.summarize}
-              params={{ s3, handle: summarize, resolveLogicalKey }}
-            >
-              {AsyncResult.case({
-                Err: (e) => {
-                  // eslint-disable-next-line no-console
-                  console.warn('Error loading summary')
-                  // eslint-disable-next-line no-console
-                  console.error(e)
-                  return null
-                },
-                _: () => <M.CircularProgress className={classes.progress} />,
-                Ok: R.map((i) => (
-                  <SummaryItemFile
-                    key={i.key}
-                    // TODO: make a reusable function to compute relative s3 paths or smth
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "BucketSummary" or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/containers/Bucket/Summary.js`
 - [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/containers/Bucket/Summary.js#L214-L214)
 ```js
                   // eslint-disable-next-line no-console
@@ -1898,23 +1739,6 @@ const useRevisionStyles = M.makeStyles((t) => ({
                     key={i.key}
                     // TODO: make a reusable function to compute relative s3 paths or smth
                     title={withoutPrefix(
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Dir" or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/embed/Dir.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/embed/Dir.js#L143-L143)
-```js
-      {!cfg.hideCode && <Code gutterBottom>{code}</Code>}
-
-      {data.case({
-        Err: displayError(),
-        Init: () => null,
-        _: (x) => {
-          const res = AsyncResult.case(
-            {
-              Ok: R.identity,
-              Pending: AsyncResult.case({
 ```
 
 ## Rule: react/no-unstable-nested-components
@@ -1965,40 +1789,6 @@ const useRevisionStyles = M.makeStyles((t) => ({
   )
 }
 
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/embed/Dir.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/embed/Dir.js#L150-L150)
-```js
-            {
-              Ok: R.identity,
-              Pending: AsyncResult.case({
-                Ok: R.identity,
-                _: () => null,
-              }),
-              _: () => null,
-            },
-            x,
-          )
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component or memoize it.`
-- Path: `quiltdata/quilt/catalog/app/embed/Dir.js`
-- [Link](https://github.com/quiltdata/quilt/blob/HEAD/catalog/app/embed/Dir.js#L152-L152)
-```js
-              Pending: AsyncResult.case({
-                Ok: R.identity,
-                _: () => null,
-              }),
-              _: () => null,
-            },
-            x,
-          )
-
-          if (!res) return <M.CircularProgress />
 ```
 
 ## Rule: react/no-unstable-nested-components

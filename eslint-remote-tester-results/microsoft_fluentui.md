@@ -128,19 +128,3 @@
   ];
 
 ```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component or memoize it. If you want to allow component creation in props, set allowAsProps option to true.`
-- Path: `microsoft/fluentui/packages/fluentui/react-northstar-prototypes/src/prototypes/mentions/index.tsx`
-- [Link](https://github.com/microsoft/fluentui/blob/HEAD/packages/fluentui/react-northstar-prototypes/src/prototypes/mentions/index.tsx#L14-L14)
-```tsx
-      title="Editable Area with Dropdown"
-      description="Type text into editable area below. Use the '@' key to mention people."
-      styles={{ marginTop: '200px' }}
-    >
-      <MentionsEditor children={props => <MentionsDropdown {...props} />} />
-    </ComponentPrototype>
-  </PrototypeSection>
-);
-
-```

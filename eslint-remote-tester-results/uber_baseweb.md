@@ -303,40 +303,6 @@
 ```
 
 ## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Example" or memoize it.`
-- Path: `uber/baseweb/documentation-site/examples/breadcrumbs/pseudo.js`
-- [Link](https://github.com/uber/baseweb/blob/HEAD/documentation-site/examples/breadcrumbs/pseudo.js#L25-L25)
-```js
-            };
-          },
-        },
-        Separator: {
-          component: () => null,
-        },
-      }}
-    >
-      <Link href="#pseudo-parent">Parent Page</Link>
-      <Link href="#pseudo-subparent">Sub-Parent Page</Link>
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Example" or memoize it.`
-- Path: `uber/baseweb/documentation-site/examples/breadcrumbs/pseudo.tsx`
-- [Link](https://github.com/uber/baseweb/blob/HEAD/documentation-site/examples/breadcrumbs/pseudo.tsx#L24-L24)
-```tsx
-            };
-          },
-        },
-        Separator: {
-          component: () => null,
-        },
-      }}
-    >
-      <Link href="#pseudo-parent">Parent Page</Link>
-      <Link href="#pseudo-subparent">Sub-Parent Page</Link>
-```
-
-## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "Example" or memoize it. If you want to allow component creation in props, set allowAsProps option to true.`
 - Path: `uber/baseweb/documentation-site/examples/button/dropdown.js`
 - [Link](https://github.com/uber/baseweb/blob/HEAD/documentation-site/examples/button/dropdown.js#L28-L36)
@@ -810,37 +776,6 @@ export default function Example() {
       </ListItem>
     </ul>
   );
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component or memoize it. If you want to allow component creation in props, set allowAsProps option to true.`
-- Path: `uber/baseweb/documentation-site/examples/list/menu-adapter.js`
-- [Link](https://github.com/uber/baseweb/blob/HEAD/documentation-site/examples/list/menu-adapter.js#L36-L50)
-```js
-        Option: {
-          props: {
-            overrides: {
-              ListItem: {
-                component: React.forwardRef((props, ref) => (
-                  <MenuAdapter
-                    {...props}
-                    ref={ref}
-                    artwork={props.item.icon}
-                    artworkSize={ARTWORK_SIZES.LARGE}
-                    endEnhancer={() => <ChevronRight />}
-                  >
-                    <ListItemLabel
-                      description={props.item.subtitle}
-                    >
-                      {props.item.title}
-                    </ListItemLabel>
-                  </MenuAdapter>
-                )),
-              },
-            },
-          },
-        },
-      }}
 ```
 
 ## Rule: react/no-unstable-nested-components
@@ -1412,23 +1347,6 @@ export default function Example() {
 ```
 
 ## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Example" or memoize it.`
-- Path: `uber/baseweb/documentation-site/examples/slider/overrides.js`
-- [Link](https://github.com/uber/baseweb/blob/HEAD/documentation-site/examples/slider/overrides.js#L15-L15)
-```js
-      overrides={{
-        InnerThumb: ({$value, $thumbIndex}) => (
-          <React.Fragment>{$value[$thumbIndex]}</React.Fragment>
-        ),
-        ThumbValue: () => null,
-        Thumb: {
-          style: () => ({
-            height: '36px',
-            width: '36px',
-            display: 'flex',
-```
-
-## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "Example" or memoize it. If you want to allow component creation in props, set allowAsProps option to true.`
 - Path: `uber/baseweb/documentation-site/examples/slider/overrides.tsx`
 - [Link](https://github.com/uber/baseweb/blob/HEAD/documentation-site/examples/slider/overrides.tsx#L11-L13)
@@ -1445,23 +1363,6 @@ export default function Example() {
           style: () => ({
             height: '36px',
             width: '36px',
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Example" or memoize it.`
-- Path: `uber/baseweb/documentation-site/examples/slider/overrides.tsx`
-- [Link](https://github.com/uber/baseweb/blob/HEAD/documentation-site/examples/slider/overrides.tsx#L14-L14)
-```tsx
-      overrides={{
-        InnerThumb: ({$value, $thumbIndex}) => (
-          <React.Fragment>{$value[$thumbIndex]}</React.Fragment>
-        ),
-        ThumbValue: () => null,
-        Thumb: {
-          style: () => ({
-            height: '36px',
-            width: '36px',
-            display: 'flex',
 ```
 
 ## Rule: react/no-unstable-nested-components
@@ -1903,23 +1804,6 @@ export default function Example() {
 ```
 
 ## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "Scenario" or memoize it.`
-- Path: `uber/baseweb/src/breadcrumbs/__tests__/breadcrumbs-pseudo.scenario.js`
-- [Link](https://github.com/uber/baseweb/blob/HEAD/src/breadcrumbs/__tests__/breadcrumbs-pseudo.scenario.js#L33-L33)
-```js
-            };
-          },
-        },
-        Separator: {
-          component: () => null,
-        },
-      }}
-    >
-      <Link href="#">Parent Page</Link>
-      <Link href="#">Sub-Parent Page</Link>
-```
-
-## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "Scenario" or memoize it. If you want to allow component creation in props, set allowAsProps option to true.`
 - Path: `uber/baseweb/src/button/__tests__/button-shapes.scenario.js`
 - [Link](https://github.com/uber/baseweb/blob/HEAD/src/button/__tests__/button-shapes.scenario.js#L30-L30)
@@ -2033,29 +1917,6 @@ export default function Example() {
           component: props => (
             <StyledDay data-highlighted={props.$isHighlighted} {...props} />
           ),
-        },
-        MonthYearSelectButton: {props: {'data-id': 'monthYearSelectButton'}},
-        MonthYearSelectStatefulMenu: {
-          props: {
-            overrides: {List: {props: {'data-id': 'monthYearSelectMenu'}}},
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component or memoize it. If you want to allow component creation in props, set allowAsProps option to true.`
-- Path: `uber/baseweb/src/datepicker/__tests__/datepicker-range.scenario.js`
-- [Link](https://github.com/uber/baseweb/blob/HEAD/src/datepicker/__tests__/datepicker-range.scenario.js#L26-L32)
-```js
-      timeSelectStart
-      overrides={{
-        Day: {
-          // eslint-disable-next-line react/display-name
-          component: React.forwardRef((props, ref) => (
-            <StyledDay
-              data-highlighted={props.$isHighlighted}
-              {...props}
-              ref={ref}
-            />
-          )),
         },
         MonthYearSelectButton: {props: {'data-id': 'monthYearSelectButton'}},
         MonthYearSelectStatefulMenu: {
@@ -2322,35 +2183,6 @@ export default function Example() {
         <ListItemLabel>96px Artwork</ListItemLabel>
       </ListItem>
     </div>
-```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component or memoize it. If you want to allow component creation in props, set allowAsProps option to true.`
-- Path: `uber/baseweb/src/list/__tests__/list-item-menu-adapter.scenario.js`
-- [Link](https://github.com/uber/baseweb/blob/HEAD/src/list/__tests__/list-item-menu-adapter.scenario.js#L38-L50)
-```js
-        Option: {
-          props: {
-            overrides: {
-              ListItem: {
-                component: React.forwardRef((props, ref) => (
-                  <MenuAdapter
-                    {...props}
-                    ref={ref}
-                    artwork={props.item.icon}
-                    artworkSize={ARTWORK_SIZES.LARGE}
-                    endEnhancer={() => <ChevronRight />}
-                  >
-                    <ListItemLabel description={props.item.subtitle}>
-                      {props.item.title}
-                    </ListItemLabel>
-                  </MenuAdapter>
-                )),
-              },
-            },
-          },
-        },
-      }}
 ```
 
 ## Rule: react/no-unstable-nested-components

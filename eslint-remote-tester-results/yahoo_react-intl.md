@@ -1,7 +1,7 @@
 ## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "StandardsSection" or memoize it. If you want to allow component creation in props, set allowAsProps option to true.`
 - Path: `yahoo/react-intl/website/src/pages/index.js`
-- [Link](https://github.com/yahoo/react-intl/blob/HEAD/website/src/pages/index.js#L173-L177)
+- [Link](https://github.com/yahoo/react-intl/blob/HEAD/website/src/pages/index.js#L182-L186)
 ```js
         <FormattedMessage
           id="standards-desc"
@@ -22,7 +22,7 @@
 ## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "StandardsSection" or memoize it. If you want to allow component creation in props, set allowAsProps option to true.`
 - Path: `yahoo/react-intl/website/src/pages/index.js`
-- [Link](https://github.com/yahoo/react-intl/blob/HEAD/website/src/pages/index.js#L178-L178)
+- [Link](https://github.com/yahoo/react-intl/blob/HEAD/website/src/pages/index.js#L187-L187)
 ```js
               <a href="https://www.ecma-international.org/ecma-402/">
                 {chunks}
@@ -39,7 +39,7 @@
 ## Rule: react/no-unstable-nested-components
 - Message: `Declare this component outside parent component "StandardsSection" or memoize it. If you want to allow component creation in props, set allowAsProps option to true.`
 - Path: `yahoo/react-intl/website/src/pages/index.js`
-- [Link](https://github.com/yahoo/react-intl/blob/HEAD/website/src/pages/index.js#L179-L183)
+- [Link](https://github.com/yahoo/react-intl/blob/HEAD/website/src/pages/index.js#L188-L192)
 ```js
                 {chunks}
               </a>

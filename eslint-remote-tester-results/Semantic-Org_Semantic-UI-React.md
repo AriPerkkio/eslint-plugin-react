@@ -39,20 +39,3 @@ export const ShorthandItemFuncAssert = () => (
   </>
 )
 ```
-
-## Rule: react/no-unstable-nested-components
-- Message: `Declare this component outside parent component "ShorthandItemFuncNullAssert" or memoize it.`
-- Path: `Semantic-Org/Semantic-UI-React/test/typings.tsx`
-- [Link](https://github.com/Semantic-Org/Semantic-UI-React/blob/HEAD/test/typings.tsx#L40-L40)
-```tsx
-  </>
-)
-
-export const ShorthandItemFuncNullAssert = () => (
-  <Button content='Foo' icon={{ children: () => null }} />
-)
-
-export const ShorthandItemBooleanAssert = () => (
-  <>
-    <Button icon />
-```
