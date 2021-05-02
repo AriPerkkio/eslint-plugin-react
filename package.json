@@ -52,6 +52,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-eslint-plugin": "^2.3.0",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "link:./",
     "eslint-remote-tester": "^1.1.0",
     "eslint-remote-tester-repositories": "^0.0.1",
     "espree": "^3.5.4",
