@@ -30,7 +30,7 @@ jobs:
           - 6
           - 5
           - 4
-        typescript-eslint-parser: ${{ matrix.node-version >= 10 && '3' || '2' }}
+        typescript-eslint-parser: ${{ node-version >= 10 && '3' || '2' }}
         exclude:
           - node-version: 9
             eslint: 7
