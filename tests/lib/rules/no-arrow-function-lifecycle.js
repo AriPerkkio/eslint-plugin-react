@@ -347,16 +347,17 @@ ruleTester.run('no-arrow-function-lifecycle', rule, {
           render: function() { return <div />; }
         });
       `
-    },
+    }
+  ].concat(parsers.TS([
     {
       code: `
         class MyComponent extends React.Component {
-          onChange: Function;
+          onChange: () => void;
         }
       `,
       parser: parsers['@TYPESCRIPT_ESLINT']
     }
-  ],
+  ])),
 
   invalid: [
     {
