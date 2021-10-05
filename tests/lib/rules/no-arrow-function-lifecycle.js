@@ -347,6 +347,14 @@ ruleTester.run('no-arrow-function-lifecycle', rule, {
           render: function() { return <div />; }
         });
       `
+    },
+    {
+      code: `
+        class MyComponent extends React.Component {
+          onChange: Function;
+        }
+      `,
+      parser: parsers['@TYPESCRIPT_ESLINT']
     }
   ],
 
