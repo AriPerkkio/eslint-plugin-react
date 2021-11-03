@@ -16,6 +16,8 @@ jobs:
           node-version: 14
       - run: |
           npm -v
+          npm install -g npm
+          npm -v
       - run: |
           npm install
           npm link
