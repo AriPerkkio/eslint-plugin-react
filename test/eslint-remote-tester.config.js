@@ -2,8 +2,12 @@
 
 const eslintRemoteTesterRepositories = require('eslint-remote-tester-repositories');
 
+console.log('npm -v', require('child_process').execSync('npm -v').toString());
+
 module.exports = {
-  repositories: eslintRemoteTesterRepositories.getRepositories({ randomize: true }),
+  repositories: eslintRemoteTesterRepositories
+    .getRepositories({ randomize: true })
+    .slice(0, 2),
 
   pathIgnorePattern: eslintRemoteTesterRepositories.getPathIgnorePattern(),
 

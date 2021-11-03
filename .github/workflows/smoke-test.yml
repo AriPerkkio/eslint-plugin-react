@@ -11,15 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ljharb/actions/node/install@main
-        name: 'nvm install lts/* && npm install'
+      - uses: actions/setup-node@v1
         with:
-          node-version: 'lts/*'
-          skip-ls-check: true
+          node-version: 16
       - run: |
+          npm -v
+      - run: |
+          npm install
           npm link
           npm link eslint-plugin-react
-      - uses: AriPerkkio/eslint-remote-tester-run-action@v1
+      - uses: AriPerkkio/eslint-remote-tester-run-action@v2
         with:
           issue-title: 'Results of weekly scheduled smoke test'
           eslint-remote-tester-config: test/eslint-remote-tester.config.js
